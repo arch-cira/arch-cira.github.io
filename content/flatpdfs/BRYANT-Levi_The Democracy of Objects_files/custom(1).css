@@ -1,0 +1,289 @@
+/* Start: Left-align text in logo with text on page */
+.maincontent, #globalactions, #footer {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#quicksearchwrapper {
+  margin: 8px 20px 0 0;
+}
+
+#masthead {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#quicksearchwrapper {
+  margin-right: 0;
+}
+
+a, a:active, .link, .link:active {
+  color: #222222;
+}
+
+#globalnav ul li a, #globalnav ul li a:visited, #orgnav ul li a, #orgnav ul li a:visited {
+  color: #222222;
+  background: white;
+}
+
+.sectionnav a, .sectionnav a:visited {
+  color: #222222;
+}
+
+#globalnav ul li a:hover, #globalnav ul li a:focus, #orgnav ul li a:hover, #orgnav ul li a:focus, .sectionnav a:hover, .sectionnav a:focus {
+  background: #222222;
+  color: white;
+}
+
+.pagenav ul li a:hover, .pagenav ul li a:focus {
+  /* interaction style for prev/next nav */
+  background: #222222;
+  color: white;
+}
+
+#searchnav li a:hover, #browsenav li a:hover, #xcollsearchtabs li a:hover {
+  background: #222222;
+  /* White border around hover looks better -- rendering of rounded
+     buttons with background and colored bordered is pixelated in 
+     firefox */
+  border: 1px solid white;
+  border-bottom: 0;
+  color: white;
+}
+
+#format-buttons a, #zoom a {
+  background: #fff;
+}
+#format-buttons a:hover, #zoom a:hover {
+  background: #222222;
+  border-color: #222222;
+  color: #fff;
+}
+#format-buttons a.current, #format-buttons a.current:hover, #zoom a.current, #zoom a.current:hover {
+  background: #ddd;
+  color: #222222;
+  border-right: 1px solid #444;
+  border-bottom: 1px solid #444;
+  background: #bbb;
+}
+#format-buttons a, #format-buttons a.current:hover, #zoom a, #zoom a.current:hover {
+  border: 1px solid #aaa;
+}
+
+#advanced-search-link {
+  display: block;
+  float: right;
+}
+
+#footer {
+  background: none;
+  text-align: center;
+  line-height: 1.6em;
+  height: auto;
+  padding-bottom: 1em;
+  /* Override mpubs footer.css */
+}
+#footer a:link, #footer a:visited {
+  text-decoration: none;
+  color: #000099;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
+#footer #published {
+  padding-top: 10px;
+  background: url(/o/ohp/graphics/ohp-logo.png) no-repeat transparent 100% 50%;
+  min-height: 25px;
+}
+#footer #hosted {
+  background: url(/m/mpubs/graphics/mpub-logo-bw.png) no-repeat transparent 100% 0%;
+  min-height: 67px;
+}
+#footer #footer-images {
+  width: 150px;
+  float: right;
+}
+#footer #footer-images img {
+  margin-bottom: 8px;
+}
+#footer #licenseinfo #licenselink {
+  text-decoration: none;
+  color: #000099;
+}
+#footer #licenseinfo #licenselink:hover {
+  text-decoration: underline;
+}
+#footer div {
+  background: none;
+  height: auto;
+}
+#footer #hosted-by {
+  margin-top: 1em;
+  line-height: 1.4em;
+}
+#footer #hosted-by a:link, #footer #hosted-by a:visited {
+  text-decoration: none;
+  color: #336699;
+}
+#footer #hosted-by a:hover {
+  text-decoration: underline;
+}
+
+#header {
+  width: auto;
+  font-size: 1.05em;
+  padding-bottom: 1em;
+  /* Amazon & PDF buttons */
+  /* So Amazon & PDF buttons appear next to each other, even though Amazon button in div.pod */
+  margin-bottom: 0;
+}
+#header div {
+  margin-top: 0.5em;
+}
+#header .title {
+  clear: right;
+  font-size: 1.9em;
+  margin-top: 1.6em;
+}
+#header .publisher {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  margin-top: 6.5em;
+  /* margin-top: 0.8em; */
+}
+#header .authors {
+  font-size: 1.3em;
+}
+#header .imprint {
+  margin-top: 0.6em;
+}
+#header .button.right {
+  margin: 1em 0.75em 0.5em 0;
+  font-size: .85em;
+}
+#header .pod {
+  display: inline;
+  font-size: 1em;
+  /* Undo any font-size changes */
+}
+
+#mini-content-header {
+  border: 1px solid #ddd;
+  padding: 0.4em 2px;
+  border-right: 0;
+  border-left: 0;
+  margin-bottom: 12px;
+}
+#mini-content-header .authors {
+  font-style: italic;
+  float: right;
+}
+#mini-content-header h1 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.encodedText div.anthology-chapter > h3, .encodedText div.anthology-chapter > h4, .encodedText div.anthology-chapter > h5, .encodedText div.chapter > h3, .encodedText div.chapter > h4, .encodedText div.chapter > h5 {
+  margin-top: 1em;
+  font-size: 1.6em;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.toc li.anthology-chapter .bibl-title, .toc li.chapter .bibl-title {
+  font-size: 1.11111111111em;
+  /* 1em / .9em = 1.11111111111em */
+}
+
+.maincontent {
+  margin-top: 20px;
+}
+
+#cover-image-wrapper {
+  line-height: 0;
+  padding: 0;
+  margin: 15px;
+  margin-right: 25px;
+  width: 200px;
+  height: 300px;
+}
+#cover-image-wrapper span {
+  display: block;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+  border: 1px solid #777;
+  font-style: italic;
+}
+
+#masthead-bottom, #content-bottom {
+  clear: both;
+  font: 0.75em/1.231 Helvetica, "Liberation Sans", "Dejavu Sans",Arial, sans-serif;
+  padding-top: 0.5em;
+}
+#masthead-bottom a:link, #masthead-bottom a:visited, #content-bottom a:link, #content-bottom a:visited {
+  text-decoration: none;
+  color: #000099;
+}
+#masthead-bottom a:hover, #content-bottom a:hover {
+  text-decoration: underline;
+}
+
+#content-bottom {
+  margin-top: 5em;
+}
+
+#tocbody, #resultsbody {
+  margin-bottom: 2.5em;
+}
+
+#tocbody {
+  /* Line up contents of toc page (only) with cover image */
+}
+#tocbody h1, #tocbody #toccontents {
+  margin-left: 15px;
+}
+
+/*
+#header .amazon {
+  @include rounded( 0 );
+  padding: 0;
+  background: transparent;
+  float: none;
+  margin-left: 0;
+  margin-bottom: 0;
+  border-bottom: 1px dotted #222;
+}
+
+#header .amazon > strong  {
+  border-bottom: 0;
+}
+#header .pod {
+  margin-top: 4em; 
+}
+*/
+.sectionnav {
+  display: none;
+}
+
+#searchresults .pod {
+  display: none;
+}
+
+@media screen and (min-width: 47.8125em) {
+  /* Start: Left-align text in logo with text on page */
+  .maincontent, #globalactions, #footer {
+    margin-left: 67px;
+    margin-right: 67px;
+  }
+
+  #quicksearchwrapper {
+    margin: 8px 67px 0 0;
+  }
+
+  #masthead {
+    margin-left: 67px;
+    margin-right: 67px;
+  }
+}

@@ -1,0 +1,28 @@
+#footer { /* container for footer logos, text, etc. */
+	border-top: 1px solid #e5e5e5;
+  height: 75px; /* needs to be the height of any logos or other image backgrounds in the footer */
+	text-align: center;
+  font-size: 13px;
+  padding: 15px 8px 0 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  line-height: 1.5em;
+  background: url(/m/mpubs/graphics/mpub-logo-bw.png) no-repeat transparent 100% 8px;
+
+}
+
+
+#footer div {
+ height: 100%;
+ /* background: url(/m/mpubs/graphics/mpub-logo-bw.png) no-repeat transparent 100% 2px; */
+}
+#footer div div {
+  /* background: url(/m/mpubs/graphics/mlib.png) no-repeat transparent right top; */
+}
+
+#footer p {
+  /* Use padding instead of margin -- margin pushes down the divs as well */
+  padding-top: 7px;
+  line-height: 12px;
+}
+

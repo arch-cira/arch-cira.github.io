@@ -1,0 +1,662 @@
+$(document).ready( function() { 
+
+  prepareSkipLinks();
+
+  prepareShrinkWrapping();
+
+  prepareNotes();
+
+  prepareQuickSearch();
+
+ // prepareEPUBMoreInfo();
+
+  prepareLicense();
+
+  prepareSearchForm();
+
+  prepareSearchResults();
+
+  prepareHighlighting();
+
+  preparePageview();
+
+  preparePageviewTextView();
+
+  prepareExtras();
+  
+  //prepareIsAltmetric();
+
+  prepareChapters();
+
+});
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+function prepareSkipLinks() {
+
+   
+
+  var is_webkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1;
+  var is_opera = navigator.userAgent.toLowerCase().indexOf('opera') > -1;
+
+  $("#skipnav a").each(function() {
+
+    if ( is_webkit || is_opera ) {
+      $(this).attr("tabindex", "0");
+      $(this).attr("href") + "#";
+    }
+
+    $(this).click(function(e) {
+      $(this).focus();
+    });
+
+  });
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+function prepareShrinkWrapping() {
+  _shrinkLgRendRight();
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+function _shrinkLgRendRight() {
+  
+ 
+  $( '#article' ).find( '.lg' ).each( function() {
+
+    // Make sure the item we're right aligning is currently left aligned
+    $( this ).find( '.rend-right' ).each( function() {
+      $( this ).css( 'text-align', 'left' );
+    });
+
+    // Temporarily set to inline so can get width
+    display = $(this).css( 'display' );
+    $(this).css( 'display', 'inline-block' );
+
+    marginRight = 5; // A little extra space helps prevent some word-wrapping
+    width = $(this).width() + marginRight; 
+
+    // Set original display type and set fixed width
+    $(this).css( 'display', display );    
+    $(this).css( 'width', width + 'px' );
+    
+    // Now right-align the item 
+    $( this ).find( '.rend-right' ).each( function() {
+      $( this ).css( 'text-align', 'right' );
+      $( this ).css( 'margin-right', marginRight + 'px' );
+    });
+
+    // Ta-da: shrink wrapped!
+  });
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - 
+function contains( str1, str2 ) {
+    return str1.indexOf(str2) != -1;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function preparePageview() {
+
+	 
+
+  /* Hide submit button; there so form degrades gracefully */
+  var submit = $( '#submit-pageview' );
+  submit.hide();
+
+  /* If view=text, don't show #zoom */
+  if ( contains( document.location.href, 'view=text' ) ) {
+    var zoom = $( '#zoom' );
+    zoom.hide();
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function preparePageviewTextView() {
+
+	 
+
+  var text_view = $('#pvdoccontent');
+  var nav       = $('#pagenav');
+
+  if ( $(text_view).length >0 && $(nav).length > 0) {
+    var width = $(nav).css('width');
+    var p_r   = $(nav).css('padding-right');
+    var p_l   = $(nav).css('padding-left');
+    $(text_view).css('width',width);
+    $(text_view).css('padding-right', p_r);
+    $(text_view).css('padding-left', p_l);
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareHighlighting() {
+	
+	 
+
+  var checkbox = $( '#toggle-highlighting-checkbox' );
+
+  checkbox.change(function() {
+    var href = buildUrlFromHighlightingForm(); 
+    window.location.href = href;
+  });
+
+  $( '#submit-toggle-highlighting' ).hide();
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function buildUrlFromHighlightingForm() {
+
+	 
+
+  var form = $( '#toggle-highlighting-form' );
+
+  var base = form.attr( 'action' );
+
+  var query = '';
+
+  form.find( 'input[type=hidden]' ).each( function() {
+    
+    var name = $( this ).attr( 'name' );
+    var val = $( this ).attr( 'value' );
+
+    if ( query != '' ) {
+      query += ';';
+    }
+    
+    query += ( name + '=' + val );
+
+  });
+
+  var checkbox = $("#toggle-highlighting-checkbox");
+  if ( checkbox.is(':checked') ) {
+    query += ';hi=1';
+  }
+
+  return base + '?' + query;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareNotes() {
+
+  /* ----------------------------------------------------- 
+      The DOM:
+        .note_link           // The link to open JS content in dialog
+        .note_content        
+            .javascript      // Content as intended for JS rendering
+            .no_javascript   // Content intended when no JS support
+
+      When user clicks on .note_link, the content in
+      .note_content .javascript is shown in dialog box.
+
+      By default, .note_link and .note_content .javascript is
+      invisible so clients without JavaScript support will only
+      see .note_content .javascript.
+     ----------------------------------------------------- */
+
+	 
+
+
+  // Only shown when no JavaScript support
+  $( '.note_content .no_javascript' ).each( function( index, node ) {
+    $( node ).hide();
+  });
+
+  $( '.note_content .javascript' ).each( function( index, node ) {
+      var dialog = $( node );  
+      dialog.hide();
+      dialog.dialog({ autoOpen: false });
+  });
+
+  $( '.note_link' ).each( function( index, node ) {
+    var link = $( node );
+    link.show();
+    link.click( function() { 
+      var target_id = '#note_content_' + $(node).attr('id'); 
+      var dialog = $( target_id );
+      dialog.css( 'display', 'block' ); // Can't do this in CSS, or will
+                                        // break layout. So do here.
+      openDialog( dialog, link );
+    })
+  });
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareQuickSearch() {
+
+  prepareQuickSearchOptions();
+
+  prepareQuickSearchModeSelect();
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareQuickSearchOptions() {
+ 
+  
+ 
+  // Hidden by default. We'll make visible.
+  var optionsObj = $( '.quicksearch-options' );
+
+  if ( optionsObj ) {
+    optionsObj.show();
+  }
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareQuickSearchModeSelect() {
+
+	 
+
+  var modeObj = $( '#mode' );
+
+  // There isn't always a mode; but a mode 
+  // indicates that there is UI work to do.
+  if ( modeObj ) {
+
+    modeObj.change( function() {
+      handleQuickSearchModeSelect( modeObj.val() );
+    });
+    
+    // Initialize
+    handleQuickSearchModeSelect( modeObj.val() );
+  }
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function getQuickSearchVar_cc() {
+
+	 
+
+  return getObjText( $( '#current-collection' ) );
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function getQuickSearchVar_idno() {
+	
+	 
+
+  return getObjText( $( '#current-idno' ) );
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function getQuickSearchVar_g() {
+
+	 
+	
+  return getObjText( $( '#current-group' ) );
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function getObjText( obj ) {
+
+  if ( obj ) {
+    return obj.text();
+  }
+
+  return null;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function handleQuickSearchModeSelect( modeVal ) {
+
+	 
+
+  var quicksearchtextObj = $( '#quicksearchtext' );
+
+  var varswrapperObj = $( '#quicksearch-hidden-vars-container' );
+
+  // Clear the container  
+  varswrapperObj.html( '' );
+
+  // Collection
+  if ( modeVal == 'collection' ) {
+    handleQuickSearchModeSelectCollection( quicksearchtextObj, varswrapperObj );
+  } 
+  
+  // Monograph
+  else if (modeVal == 'monograph' ) {
+    handleQuickSearchModeSelectMonograph( quicksearchtextObj, varswrapperObj ); 
+  } 
+ 
+  // Group
+  else if ( modeVal == 'group' ) {
+    handleQuickSearchModeSelectGroup( quicksearchtextObj, varswrapperObj ); 
+  }
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function handleQuickSearchModeSelectMonograph( quicksearchtextObj, varswrapperObj ) {
+
+  quicksearchtextObj.html( 'Search this text.' );
+
+  appendHiddenVar( varswrapperObj, 'cc', getQuickSearchVar_cc() );
+  appendHiddenVar( varswrapperObj, 'idno', getQuickSearchVar_idno() );
+  appendHiddenVar( varswrapperObj, 'g', getQuickSearchVar_g() );
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function handleQuickSearchModeSelectCollection( quicksearchtextObj, varswrapperObj ) {
+
+	
+
+  var monographCountObj = $( '#collection-monograph-count' );
+
+  if (monographCountObj ) {
+  
+    quicksearchtextObj.html( 'Search all ' + monographCountObj.text() + ' monographs in this collection.' );
+
+  } else {
+    
+    quicksearchtextObj.html( 'Search all monographs in this collection.' );
+
+  }
+
+  appendHiddenVar( varswrapperObj, 'cc', getQuickSearchVar_cc() );
+  appendHiddenVar( varswrapperObj, 'g', getQuickSearchVar_g() );
+  appendHiddenVar( varswrapperObj, 'xc', '0' );
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function handleQuickSearchModeSelectGroup( quicksearchtextObj, varswrapperObj ) {
+  
+  
+  
+  var collectionCount = $( '#group-collection-count' ).text();
+
+  quicksearchtextObj.html( 'Search all ' + collectionCount + ' collections in this group.' );
+
+  appendHiddenVar( varswrapperObj, 'g', getQuickSearchVar_g() );
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function appendHiddenVar( varswrapperObj, name, val ) {
+  if ( val ) {
+    varswrapperObj.append( '<input type="hidden" name="' + name + '" value="' + val  + '"/>' );
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareSearchResults() {
+  
+  prepareXCollFacets(); 
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareXCollFacets() {
+  /* Drop-down box that lets you select all or 
+     some/one of collections */
+     
+     
+  var disable = false;
+  if ( disable ) {
+    return;
+  }
+
+  var facets = $( '#xcoll-facets' );
+  facets.change(function() {
+    window.location.href = buildUrlFromFacetsForm(); 
+  });
+
+  // Don't need submit button since jQuery enabled
+  var facetsButton = $( '#xcoll-facets-submit' );
+  facetsButton.hide();
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function buildUrlFromFacetsForm() {
+    
+
+  var form = $( '#facets-form' );
+
+  var base = form.attr( 'action' );
+
+  var query = '';
+
+  form.find( 'input[type=hidden]' ).each( function() {
+    
+    var name = $( this ).attr( 'name' );
+    var val = $( this ).attr( 'value' );
+    
+    if ( query != '' ) {
+      query += ';';
+    }
+    
+    query += ( name + '=' + val );
+
+  });
+
+  var facets = $( '#xcoll-facets' );
+  query += ( ';' + facets.attr( 'name' ) + '=' + facets.attr( 'value' ) );
+
+  return base + '?' + query;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareSearchForm() {
+  
+  
+  
+  var searchForm = $( 'form#search' );
+
+  if ( searchForm.size() > 0 ) {
+
+    var searchFormDom = searchForm.get(0);
+
+    prepareSelectDeselectAll( searchFormDom );
+    
+    prepareSearchValidation( searchForm );
+
+  }
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareSearchValidation( searchForm ) {
+  
+  searchForm.submit( function() {
+
+    if ( isSearchFormXCollWithoutSelectedCollection( searchForm ) ) {
+      alert( 'At least one collection must be selected for search.' );
+      return false;
+    }
+
+    if ( ! isSearchFormHaveQuery( searchForm ) ) {
+      alert( 'Please type a search term or phrase.' );
+      return false;
+    }
+  
+  });
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function isSearchFormXCollWithoutSelectedCollection( searchForm ) {
+  
+  var collections = searchForm.find( 'input[type=checkbox][name=c]' );
+  
+  return ( collections.size() > 0 && ! collections.is( ':checked' ) ); 
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function isSearchFormHaveQuery( searchForm ) {
+  
+  var field = searchForm.find( 'input[type=text][name=q1]' );
+  return field.val() != ''; 
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareSelectDeselectAll( searchFormDom ) {
+  buildSelectDeselectAll();
+  
+  var deselectAll = $( '#deselect-all' );
+  deselectAll.click( function() { 
+    clearAllRecords( searchFormDom ); 
+    return false;
+  });
+
+  var selectAll = $( '#select-all');
+  
+  selectAll.click( function() { 
+    checkAllRecords( searchFormDom );
+    return false;
+  });
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function buildSelectDeselectAll() {
+  
+  var container = $( '#x-coll-select-deselect-all' );
+  
+  container.append ( '<a id="deselect-all" href="deselect-all">Deselect All</a>' ); 
+  container.append ( ' &nbsp; ' );
+  container.append ( '<a id="select-all" href="select-all">Select All</a>' ); 
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareEPUBMoreInfo() {
+  //var dialog = $( '#epub-more-info' );
+  $( '#epub-more-info' ).dialog({ autoOpen: false })
+  $('.download-epub .more-info').each(function() {
+    prepareEPUBMoreInfoButton( this, dialog );
+  });
+  $('#download-epub .more-info').each(function() {
+    prepareEPUBMoreInfoButton( this, dialog );
+  });
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareEPUBMoreInfoButton( wrapper, dialog ) {
+  $(wrapper).append( '<img src="/m/mpubs/graphics/icon_info.gif"/>' );
+  $(wrapper).click(function() {
+    return openDialog( dialog, $(wrapper) );
+  });
+}
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareLicense() {
+
+	
+  
+  var licenseDialog = $( '#licensetext' );
+  $( '#licensetext' ).dialog({ autoOpen: false });
+
+  var licenseHover = $( '#licensehover' );
+  prepareLicenseHover( licenseHover );
+  
+  var licenseLink = $( '#licenselink' );
+  prepareLicenseLink( licenseLink, licenseDialog );
+  
+  var licenseTextLabel = $( '#licensetextlabel' );
+  licenseTextLabel.hide();
+  
+  var licenseIcon = $( '#licenseicon' );
+  prepareLicenseIcon( licenseIcon, licenseHover );
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareLicenseHover( licenseHover ) {
+  licenseHover.position('#licenseicon', {
+    anchor: ['br', 'tr'],
+    offset: [-5, 5]
+  });
+
+  licenseHover.hide();
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareLicenseLink( licenseLink, licenseDialog ) {
+  
+  licenseLink.html('Permissions');
+
+  licenseLink.attr('href','#'); // So treated as a link when rendered,
+                                // and so tabindex is enabled
+  
+  licenseLink.click( function() {
+
+    return openDialog( licenseDialog, licenseLink );
+  
+  });
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function openDialog( dialog, link ) {
+  
+  dialog.dialog( "option", "position", { my: 'left top', at: 'left bottom', of: '#licenselink' } );
+
+  // Open
+  dialog.dialog( 'open' );
+
+  return false;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareLicenseIcon( licenseIcon, licenseHover ) {
+  
+  licenseIcon.mouseover( function() {
+    licenseHover.show();
+  });
+
+  licenseIcon.mousemove( function( e ){
+    var hoverLeft = ( e.pageX ) + 'px';
+    var hoverTop = ( e.pageY  + 15 ) + 'px';
+
+    licenseHover.css( { 'left': hoverLeft, 'top': hoverTop } );
+  });
+
+  licenseIcon.mouseout( function() {
+    licenseHover.hide();
+  });
+
+}
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareExtras() {
+	
+
+    $(".btn").button();
+
+    $(".share").mouseenter(function () {
+        $(".social")
+            .toggleClass("reveal");
+        $("li.share .btn")
+        	.toggleClass("btn-reveal");
+        })
+    .mouseleave(function () {
+            $(".social")
+                .removeClass("reveal");
+            $("li.share .btn")
+        		.removeClass("btn-reveal");
+             
+    });
+
+}
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareIsAltmetric() {
+	
+	var i = setInterval(function ()
+    {
+        if ($(".altmetric-embed" ).length )
+        {
+            clearInterval(i);
+            if ($(".altmetric-embed" ).length ) {
+            	$("#extras").toggleClass("no-alt");
+            }
+        }
+    }, 10000);
+}
+/* - - - - - - - - - - - - - - - - - - - - - - */
+function prepareChapters() {
+    
+    $('ul#toccontents li:has("span.rend-chapter")').addClass('chapter');
+
+}

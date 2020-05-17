@@ -1,0 +1,255 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - print.css
+    
+    Print stylesheet. Will be presented to browser
+    as media="print".
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+html body {
+  font-family: Georgia,"Times New Roman",serif;
+}
+
+/** hide **/
+#orgnav, #linktotop, #skipnav, #masthead, #globalnav, #fromsearch, #extras, #sharinglinks, .pagenav, #printpage, #pagenav, #header .toc, #disqus {
+	display: none;
+}
+
+#header a {
+  text-decoration: none;
+}
+
+.forprint {
+  display: block;
+}
+
+span.forprint {
+  display: inline;
+}
+
+/** reset via http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ */
+
+/* NOTE: this reset creates problems, as it only undoes styles with lower specificity. Hence, some styles come through, some don't. */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 12pt;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+- - - - - - - - - - - - - - - - - - - - - - - - - */
+
+:focus {
+	outline: 0;
+}
+
+body {
+	line-height: 1;
+	color: #000000;
+	background: #ffffff;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th, td {
+	text-align: left;
+	font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+/** general typography */
+body {
+	font-family: serif; /* the default serif for the user's browser (probably Georgia or Times) */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 10px 0;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+h4 {
+	font-size: 1.4em;
+}
+
+h5 {
+	font-size: 1.2em;
+}
+
+h6 {
+	font-size: 1em;
+	font-style: italic;
+}
+
+p, ul, ol {
+	margin: 0 0 10px 0;
+	line-height: 1.4em;
+}
+
+ul > ul, ol > ol { /* indents nested lists indefinitely */
+	margin: 6px 0 6px 10px;
+}
+
+blockquote, q {
+	display: block;
+	margin: 0 0 10px 30px;
+	padding: 0 0 0 10px;
+	border-left: 1px solid;
+	font-size: 90%;
+}
+
+li {
+	line-height: 1.2em;
+}
+
+em, i {
+	font-style: italic;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+table {
+	margin-bottom: 10px;
+}
+
+table caption {
+	font-size: 1.1em;
+	margin: 0 0 6px 0;
+	font-style: italic;
+	text-align: left;
+}
+
+table tr {
+	border-bottom: 1px solid #cccccc;
+}
+
+table tr:first-child, table tr:last-child {
+	border-bottom: none;
+}
+
+table th, table td { /* general style for table headers and cells */
+	padding: 6px;
+}
+
+table th {
+	font-weight: bold;
+	background: #ffffff;
+}
+
+#article cite.authors {
+	display: block;
+	margin: 0 0 10px 0;
+}
+
+#article ul {
+	list-style: disc;
+	margin: 0 0 10px 14px;
+}
+
+#article ul.toc { /* formatting for TOC page lists */
+	margin: 0 0 10px 0;
+}
+
+#article ol {
+	list-style: decimal;
+	margin: 0 0 10px 20px;
+}
+
+#article li {
+	line-height: 1.6em;
+}
+
+#article ul.toc li { /* formatting for TOC page lists items */
+	list-style: none;
+	margin: 0 0 6px 0;
+	line-height: 1.2em;
+}
+
+#article ul.toc li > ul { /* formatting for all TOC page nested lists; font gets slowly, progressively smaller */
+	list-style: inherit;
+	margin: 6px 0 10px 10px;
+	font-size: 95%;
+}
+
+#article .figure .figurecaption {
+	font-style: italic;
+}
+
+#headerbottom {
+	display: block !important; /* overrides jquery toggle, displaying all header info */
+}
+
+#headertop cite {
+	display: block;
+}
+
+/** links */
+a, a:active, a:hover, a:focus, a:visited {
+	color: #000000;
+}
+
+/* print urls for links that appear within the article, excluding footnote reference jumplinks [works in CSS2-conformant browsers] */
+#article a:link:after, #article a:visited:after {
+   content: " [" attr(href) "] ";
+   font-size: 90%;
+}
+
+/* Don't show URL after header links */
+#article .periodical a:link:after, #article .periodical a:visited:after {
+  /* content: none/normal do not work in Chrome 7.0.517.44, 
+     so use empty string */
+  content: "";
+}
+
+#article a.footnote:link:after, #article a.footnote:visited:after, #article sup.footnoteref a:link:after, #article sup.footnoteref a:visited:after {
+	/* content: none/normal do not work in Chrome 7.0.517.44, 
+     so use empty string */
+  content: "";
+}
+
+#licenselink {
+  display: none;
+}
+
+#footer {
+ height: 80px;
+ font-size: 11px; 
+ background: url(/m/mpubs/graphics/mpub-logo-bw.png) no-repeat transparent 100% 2px;
+}
+
+
+/* Don't show Hypothes.is sidebar */
+.annotator-frame, .annotator-heatmap, .annotator-outer, .annotator-collapsed, .annotator-no-transition, .annotator-notice { display: none!important; }

@@ -1,0 +1,276 @@
+@import url("/m/mpubs/styles/mpubs.css");
+.popout + .content-top {
+  margin-top: 1.5em;
+}
+
+.content-top {
+  display: block;
+  vertical-align: bottom;
+  margin-bottom: 2.5em;
+}
+
+.sectionnav {
+  /* Margin makes more sense, but MSIE8 won't comply */
+  padding: 0;
+  margin-top: 0;
+}
+
+.view .sectionnav {
+  /* Margin makes more sense, but MSIE8 won't comply */
+  padding: 3em 0 3em 0;
+  margin-top: 0;
+}
+
+.sectionnav.bottom {
+  /* Margin makes more sense, but MSIE8 won't comply */
+  padding: 3em 0 3em 0;
+  margin-top: 0;
+}
+
+#extras {
+  margin-top: .5em;
+  margin-left: 1em;
+  float: none;
+  clear: both;
+  border: none;
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+#articlebody #extras {
+  padding-top: .75em;
+}
+
+#extras .altmetric-embed {
+  padding-top: 3px;
+}
+
+#extras ul, #articlebody #extras ul {
+  margin-bottom: 10px;
+}
+
+#extras .share, #extras .share li {
+  font-size: 13px;
+}
+
+#extras .share li {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+#extras li.share {
+  margin-bottom: 0;
+}
+
+#extras ul.social li {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+#extras ul.social li:first-child {
+  margin-top: 0px;
+}
+
+#articlebody #extras .social {
+  margin-top: 1em;
+}
+
+#toccontents > li.chapter {
+  margin-left: 2em;
+}
+
+/* 18 */
+/* 19 */
+#wrapper {
+  min-width: inherit;
+}
+
+#logo {
+  width: auto;
+  height: auto;
+}
+
+#logo img {
+  width: 100%;
+  height: auto;
+}
+
+#quicksearchwrapper {
+  margin: 8px 30px 30px 0;
+  position: relative;
+  float: left;
+}
+
+#quicksearchwrapper .quicksearch-options {
+  display: none !important;
+}
+
+#toc #header h1.title, #resultsbody .content-top #header h1.title {
+  margin-bottom: 0;
+}
+
+#toc #header .authors, #resultsbody .content-top #header .authors {
+  margin-bottom: 30px;
+}
+
+.content-top {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#header {
+  padding-left: 10px;
+  width: 100%;
+}
+
+#header-clear {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+#cover-image-wrapper {
+  padding: 15px;
+  float: left;
+  width: auto;
+}
+
+#tocbody .content-top + h1 {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul#toccontents {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#articlebody .content-top {
+  margin-bottom: 3em;
+}
+
+#articlebody p, #articlebody ul, #articlebody ol, #articlebody li, #articlebody .q1-block, #articlebody .q1-poem {
+  letter-spacing: 0.02rem;
+  line-height: 1.5em;
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+#articlebody h1, #articlebody h2, #articlebody h3, #articlebody h4, #articlebody h5, #articlebody h6 {
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+#articlebody h4 {
+  font-size: 1.2em;
+}
+
+#articlebody .content-top #header h1.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+#articlebody .content-top #header .authors {
+  font-size: 14px;
+  margin: .1em 0 .5em 0;
+}
+
+#articlebody .content-top #header #doi, #articlebody .content-top #header #licenseinfo, #articlebody .content-top #header .toc {
+  font-size: 12px;
+  float: left;
+}
+
+#articlebody .content-top #header #licenseinfo, #articlebody .content-top #header .toc {
+  margin-left: 15px;
+}
+
+#articlebody .content-top #header #publisher-and-date {
+  display: none;
+}
+
+#articlebody .content-top #cover-image-wrapper {
+  display: inline;
+  width: 75px;
+  height: auto;
+}
+
+#articlebody .content-top #cover-image-wrapper img {
+  width: inherit;
+  height: auto;
+}
+
+#articlebody .q1-block .lg {
+  width: auto !important;
+}
+
+/* Screen size media queries for multiple device support */
+@media screen and (min-width: 33.125em) {
+  #cover-image-wrapper {
+    float: left;
+  }
+
+  #quicksearchwrapper {
+    margin: 8px 30px 30px 0;
+    float: left;
+    font-size: 0.8em;
+    position: relative;
+    width: auto;
+    top: 0;
+    left: 0;
+  }
+
+  #quicksearchtext {
+    float: none;
+    clear: none;
+    margin-top: 0.5em;
+  }
+
+  #footer {
+    padding-bottom: 0px;
+  }
+}
+@media screen and (min-width: 40.625em) {
+  .content-top {
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 44.375em) {
+  #wrapper {
+    width: 90%;
+  }
+
+  #footer {
+    background: url(/m/mpubs/graphics/mpub-logo-bw.png) no-repeat transparent 100% 8px;
+  }
+}
+@media screen and (min-width: 47.8125em) {
+  #quicksearchwrapper {
+    margin: 8px 30px 0 0;
+    clear: right;
+    float: right;
+    font-size: 0.8em;
+    position: relative;
+    width: auto;
+    top: 0;
+    left: 0;
+  }
+
+  #articlebody p, #articlebody ul, #articlebody ol, #articlebody li, #articlebody .q1-block, #articlebody .q1-poem {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 50.625em) {
+  #wrapper {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 56.25em) {
+  #quicksearchwrapper .quicksearch-options {
+    display: inline !important;
+  }
+}

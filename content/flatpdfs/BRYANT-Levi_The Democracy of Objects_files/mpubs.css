@@ -1,0 +1,2574 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:600);
+/* Start: Left-align text in logo with text on page */
+.maincontent, #globalactions, #footer {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#quicksearchwrapper {
+  margin: 8px 0 0 0;
+}
+
+a, a:active, .link, .link:active {
+  color: #188bb3;
+}
+
+#globalnav ul li a, #globalnav ul li a:visited, #orgnav ul li a, #orgnav ul li a:visited {
+  color: #188bb3;
+  background: #fff;
+}
+
+.sectionnav a, .sectionnav a:visited {
+  color: #188bb3;
+}
+
+#globalnav ul li a:hover, #globalnav ul li a:focus, #orgnav ul li a:hover, #orgnav ul li a:focus, .sectionnav a:hover, .sectionnav a:focus {
+  background: #188bb3;
+  color: #fff;
+}
+
+.pagenav ul li a:hover, .pagenav ul li a:focus {
+  /* interaction style for prev/next nav */
+  background: #188bb3;
+  color: #fff;
+}
+
+#searchnav li a:hover, #browsenav li a:hover, #xcollsearchtabs li a:hover {
+  background: #188bb3;
+  /* White border around hover looks better -- rendering of rounded
+     buttons with background and colored bordered is pixelated in 
+     firefox */
+  border: 1px solid #fff;
+  border-bottom: 0;
+  color: #fff;
+}
+
+#format-buttons a, #zoom a {
+  background: #fff;
+}
+#format-buttons a:hover, #zoom a:hover {
+  background: #188bb3;
+  border-color: #188bb3;
+  color: #fff;
+}
+#format-buttons a.current, #format-buttons a.current:hover, #zoom a.current, #zoom a.current:hover {
+  background: #ddd;
+  color: #188bb3;
+  border-right: 1px solid #444;
+  border-bottom: 1px solid #444;
+  background: #bbb;
+}
+#format-buttons a, #format-buttons a.current:hover, #zoom a, #zoom a.current:hover {
+  border: 1px solid #aaa;
+}
+
+/** reset via http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, font, img, ins, kbd, q, s, samp,
+small, strike, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+.inline, #search label.inline {
+  display: inline;
+}
+
+/* Items to be styled like a elements (usually for Javascript actions) */
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.right {
+  float: right;
+}
+
+img.left {
+  float: left;
+  padding-right: 1em;
+  padding-bottom: .7em;
+}
+
+.faded, .bull {
+  color: #bbb;
+}
+
+.larger {
+  font-size: 1.25em;
+}
+
+.bull {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#staticcontent .releasedate {
+  font-size: 14px;
+  margin-left: 0.5em;
+  color: #555;
+  /* border: 1px solid #ddd;
+  background: #eee; */
+  font-weight: normal;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  /* -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; */
+  padding: 0.1em 0.5em;
+}
+
+#staticcontent .releasedate .numeric {
+  font-size: 9px;
+}
+
+#staticcontent .contentleft .section {
+  margin-top: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+}
+
+#staticcontent .contentleft h2 + .section {
+  margin-top: 0;
+}
+
+#staticcontent .contentleft .section > h3:first-child {
+  margin-top: 0;
+}
+
+#staticcontent .contentleft .section h3 + h4 {
+  margin-top: 0;
+}
+
+#staticcontent .contentleft .section:last-child {
+  border-bottom: 0;
+  margin-bottom: 1em;
+}
+
+#staticcontent .contentleft .section p:first-letter {
+  font-size: 1.1em;
+}
+
+/* Label for metadata field in header */
+.displayNone, .forprint, .ie6only, .quicksearch-options {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.even {
+  background: #e9e9e9;
+}
+
+.warning {
+  color: red;
+  font-style: italic;
+}
+
+span.warning:before, span.note:before {
+  content: ' \2013  ';
+}
+
+span.warning:first-child:before {
+  content: '';
+}
+
+.note {
+  margin: 1.5em 0;
+}
+
+.custom-note, .note > .warning:first-child:last-child {
+  display: block;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.25em 1em;
+}
+
+.custom-note:before, .note > .warning:first-child:last-child:before {
+  content: 'Note: ';
+  color: #999;
+  font-style: normal;
+}
+
+.custom-note {
+  margin-top: 1.5em;
+  margin-bottom: 1.75em;
+}
+
+.popout {
+  padding: 10px;
+  margin-top: 15px;
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+.facets {
+  border: 0;
+  padding-bottom: 0;
+}
+
+.smallcaps, .large-smallcaps {
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+.smallcaps {
+  font-size: 0.8em;
+}
+
+.large-smallcaps {
+  font-size: 1em;
+}
+
+.smallstrut {
+  display: block;
+  height: .5em;
+}
+
+.details-section {
+  font-size: 1.15em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.bibl-secondary {
+  font-size: 0.8em;
+}
+
+.bibl-secondary a {
+  text-decoration: none;
+}
+
+.bibl-pg {
+  color: #555;
+}
+
+.bibl-pg:before {
+  content: " (";
+}
+
+.bibl-pg:after {
+  content: ")";
+}
+
+/**
+ * Used to make font italics, but any children .rend-i should be normal.
+ */
+.figure div, .figure .figurep, .figure p {
+  font-style: italic;
+}
+.figure div .rend-i, .figure .figurep .rend-i, .figure p .rend-i {
+  font-style: normal;
+}
+
+.specialIssueTitle, .byline, #header .author, .bibl-source, .q1-callout, .prelim, .q1-epig, table caption, h3, h5, h6, .blockquote-by, #avail, #header .subtitle {
+  font-style: italic;
+}
+.specialIssueTitle .rend-i, .byline .rend-i, #header .author .rend-i, .bibl-source .rend-i, .q1-callout .rend-i, .prelim .rend-i, .q1-epig .rend-i, table caption .rend-i, h3 .rend-i, h5 .rend-i, h6 .rend-i, .blockquote-by .rend-i, #avail .rend-i, #header .subtitle .rend-i {
+  font-style: normal;
+}
+
+.rend-istrike {
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+.rend-isup {
+  font-style: italic;
+  vertical-align: super;
+  font-size: 0.7em;
+}
+
+#pvdoccontent {
+  min-width: 50em;
+  max-width: 60em;
+  width: 90%;
+  margin: 10px auto;
+}
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - -  
+  See: http://webaim.org/techniques/skipnav/ 
+  - - - - - - - - - - - - - - - - - - - - - - - - - */
+#skipnav ul {
+  display: inline;
+}
+
+#skipnav a, .hide {
+  /* skipnav for screenreaders/nonvisual browsers */
+  position: absolute;
+  left: -999999px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+#skipnav ul, #skipnav li {
+  display: inline;
+}
+
+#skipnav a:active, #skipnav a:focus, a.hide:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  color: #222;
+}
+
+#skipnav a:active, #skipnav a:focus {
+  display: block;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: .75em 1.25em;
+  border-bottom: 2px solid #e5e5e5;
+  font-family: Sans-Serif;
+  /* http://css-tricks.com/sans-serif/ */
+  width: 100%;
+}
+
+/* *:active, */
+a:focus, input:focus, .link:focus {
+  background-color: #ffc !important;
+  color: #222 !important;
+}
+
+a:focus img {
+  border: 1px solid #e5e5e5 !important;
+}
+
+#search h1 {
+  margin-bottom: 0.5em;
+}
+#search fieldset {
+  border-top: 1px dotted #aaa;
+  padding: 1em;
+  padding-left: 1.5em;
+  padding-top: 0.75em;
+}
+#search fieldset label:first-child, #search fieldset legend:first-child + label {
+  margin-top: 0;
+  padding-top: 0;
+}
+#search fieldset legend {
+  color: #555;
+  background: #fff;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  margin-right: -0.5em;
+  margin-left: -0.5em;
+}
+#search fieldset + fieldset {
+  margin-top: 1.5em;
+}
+#search fieldset .selectmenu {
+  max-width: 28em;
+}
+#search fieldset + .submit {
+  margin-top: 4em;
+}
+
+/* nobreak is legacy, and might appear in encoded text */
+.nowrap, .nobreak {
+  white-space: nowrap;
+}
+
+/* Used to space out elements of any type. Override for 
+   specific elements on demand */
+#toccontents > li {
+  margin-bottom: 1em;
+}
+
+#toccontents li ul li {
+  margin-top: 0.5em;
+}
+
+ul.spaced li {
+  margin-bottom: 1em;
+}
+
+/* Used for items that need to fill out space. Override for
+   specific elements on demand */
+table.expanded {
+  width: 100%;
+}
+
+/* restricteditem and accessoptions styles */
+#restricteditem-content {
+  margin: 30px auto;
+}
+
+#restricteditem-content h1 {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.options {
+  width: 90%;
+  margin-left: 15px;
+  background-color: #ffc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 30px 30px;
+  border-collapse: separate;
+}
+
+table.optionsgrid th {
+  border-bottom: 1px solid #e3c27c;
+  width: 33%;
+  background-color: #ffc;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+table.optionsgrid td {
+  width: 33%;
+  font-size: .85em;
+  padding: 13px;
+}
+
+table.optionsgrid .mid {
+  border-left: 1px solid #e3c27c;
+  border-right: 1px solid #e3c27c;
+}
+
+#restricteditem h2 {
+  font-size: 1.6em;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+#restricteditem-content a.login {
+  color: blue;
+}
+
+.pay-option {
+  display: block;
+}
+
+.optiontwo {
+  margin-top: 15px;
+}
+
+.pay-optionIcon {
+  float: left;
+  width: 24px;
+}
+
+.pay-optionIcon img {
+  margin-top: 5px;
+}
+
+.pay-optionInfo {
+  clear: right;
+  margin: 0 0 0 35px;
+}
+
+.pay-optionInfo em {
+  font-weight: bold;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    legacy.css
+
+    All the legacy styles (including any
+    customizations) taken from old stylesheet into new
+    stylesheet. 
+
+    (I.e., classnames which we don't have
+    control over unless we update middleware.)
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#articlebody ul.list-bibl, ul.list-bibl li {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+ul.list-bibl li {
+  list-style-type: none;
+  /* Hanging indent */
+  margin: 0;
+  text-indent: -2em;
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+.sidebar, .figureBorder {
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background: #f5f5f5;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  margin-top: 1em;
+}
+
+.sidebar .head {
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+  margin-top: 0.25em;
+  font-style: italic;
+}
+
+.sidebar p {
+  margin: 13px 0px 0px 0px;
+}
+
+.sidebar p:first-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.pbtext {
+  display: block;
+  font-size: 0.85em;
+  color: #bbb;
+  border-top: 1px solid #d9d9d9;
+  margin: 3em 0 1.5em 0;
+  padding: 0.25em 0.5em;
+  overflow: hidden;
+}
+
+.q1-callout {
+  padding: 2em 1.5em;
+  margin: .6em 1.5em .6em 0;
+  display: block;
+  float: left;
+  width: 33%;
+  border-right: 4px solid #e5e5e5;
+  /* border-top: 4px solid #e5e5e5;
+  border-bottom: 4px solid #e5e5e5; */
+  background: #F7F7F7;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+}
+
+/* Callouts are encoded with paragraph, adding lots of extra space */
+.q1-callout p {
+  margin-bottom: 0;
+}
+
+.hilite1 {
+  background: #ff6;
+}
+
+.q1-epig, .prelim {
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+
+/* Kevin: <HI1 REND="i"> within <P TYPE="prelim"> should be shown as regular, not italicized */
+.prelim .rend-i {
+  font-style: normal;
+}
+
+.epigraph, .q1-epig {
+  margin-left: 2em;
+  margin-right: 2em;
+  font-size: 0.85em;
+  margin-bottom: 1.5em;
+}
+
+/* Don't want to compound the styling */
+.epigraph > .q1-epig, .q1-epig > .q1-epig {
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.ptr {
+  font-size: 0.7em;
+  font-style: normal;
+  margin-left: 0.25em;
+}
+
+.rend-plain {
+  font-style: normal;
+}
+
+.rend-center {
+  text-align: center;
+}
+
+#articlebody p.rend-center {
+  text-align: center;
+}
+
+.rend-aligntop {
+  vertical-align: top;
+}
+
+.rend-rightjustify, .rend-right {
+  text-align: right;
+}
+
+.rend-nowrap {
+  white-space: nowrap;
+}
+
+.rend-italics, .rend-italic, .rend-i, .rend-ital {
+  font-style: italic;
+}
+
+.rend-italicsunderlined {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.rend-u, .rend-und, .rend-underline, .rend-underlined2x, .rend-underlined3x, .rend-underlined {
+  text-decoration: underline;
+}
+
+.rend-bold, .rend-b {
+  font-weight: bold;
+}
+
+.rend-sc, .rend-smcap, .rend-scisub, .rend-scital {
+  /* Don't use the small-caps mixin, since it transforms the text to lowercase */
+  /*@include small-caps;*/
+  font-variant: small-caps;
+}
+
+.rend-scisub {
+  font-style: italic;
+  vertical-align: sub;
+}
+
+.rend-scital {
+  font-style: italic;
+}
+
+.rend-bolditalic {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.rend-strike {
+  text-decoration: line-through;
+}
+
+.rend-sub {
+  vertical-align: sub;
+}
+
+.rend-isub {
+  vertical-align: sub;
+  font-style: italic;
+}
+
+.rend-gray {
+  color: gray;
+}
+
+.rend-super, .rend-sup {
+  vertical-align: super;
+  /* avoid too much line offset: */
+  font-size: 75%;
+}
+
+.rend-sup-und, .rend-supund {
+  vertical-align: super;
+  text-decoration: underline;
+  /* avoid too much line offset: */
+  font-size: 75%;
+}
+
+.lg {
+  line-height: 1.25em;
+  margin: 1em 0;
+}
+
+.rend-code, .lg-code {
+  font-family: monospace;
+}
+
+.rend-indent1, .rend-indented {
+  margin-left: 2em;
+}
+
+.rend-alignright {
+  float: right;
+}
+
+.nomarker, .nomarker li, #article .nomarker {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.nomarker li {
+  padding-left: 50px;
+  text-indent: -30px;
+  margin-bottom: 8px;
+}
+
+.thumbfigure {
+  margin: 10px;
+  border: 1px solid blue;
+}
+
+.q1-stanza {
+  display: block;
+  margin-left: 5%;
+  margin-right: 15%;
+  padding-top: 1em;
+}
+
+.q1-verse {
+  display: block;
+  margin-left: 5%;
+  margin-right: 15%;
+  padding-top: 1em;
+}
+
+.q1-letter {
+  display: block;
+  margin-left: 5%;
+  margin-right: 15%;
+  padding-top: 1em;
+}
+
+.q1-citation {
+  display: block;
+  margin: 1em 15% 1em 5%;
+}
+
+.q1-block, .q1-poem {
+  display: block;
+  margin: 2em 3em;
+  padding-top: 0em;
+}
+
+/* Set the indent value */
+.lineindent1 {
+  padding-left: 0.75em;
+}
+
+/* Hack: adjust the negative margins on .line-number to make it stay put */
+.lineindent1 > .line-number {
+  margin-left: -3.75em;
+}
+
+/* Set the indent value */
+.lineindent2 {
+  padding-left: 1.5em;
+}
+
+/* Hack: adjust the negative margins on .line-number to make it stay put */
+.lineindent2 > .line-number {
+  margin-left: -4.5em;
+}
+
+/* Set the indent value */
+.lineindent3 {
+  padding-left: 2.25em;
+}
+
+/* Hack: adjust the negative margins on .line-number to make it stay put */
+.lineindent3 > .line-number {
+  margin-left: -5.25em;
+}
+
+/* Set the indent value */
+.lineindent4 {
+  padding-left: 3em;
+}
+
+/* Hack: adjust the negative margins on .line-number to make it stay put */
+.lineindent4 > .line-number {
+  margin-left: -6em;
+}
+
+/* Set the indent value */
+.lineindent5 {
+  padding-left: 3.75em;
+}
+
+/* Hack: adjust the negative margins on .line-number to make it stay put */
+.lineindent5 > .line-number {
+  margin-left: -6.75em;
+}
+
+/* Set the indent value */
+.lineindent6 {
+  padding-left: 4.5em;
+}
+
+/* Hack: adjust the negative margins on .line-number to make it stay put */
+.lineindent6 > .line-number {
+  margin-left: -7.5em;
+}
+
+.xmltable {
+  margin: 1em auto 2em auto;
+}
+
+.xmltable-rend-left {
+  margin: 1em 0 2em 0;
+}
+
+.xmltable + .TRAILER {
+  margin-top: -1em;
+  /* If parent selectors existed, could change .xmltable to have margin-bottom or 1em... sigh */
+  margin-bottom: 2em;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    search.css
+
+    Styles specific to search section.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#search label, #search .label {
+  padding-right: 0.5em;
+  font-style: italic;
+  display: block;
+  margin-top: 1em;
+}
+
+#searchform .field {
+  display: block;
+  margin-top: 0.25em;
+  /* margin-left: 2em; */
+}
+
+#searchform .indent {
+  margin-left: 3em;
+}
+
+#searchform .field input {
+  width: 18em;
+}
+
+#searchform .field input.checkbox {
+  width: auto;
+}
+
+#search .submit {
+  margin-top: 2.5em;
+  margin-bottom: 2em;
+  margin-left: 0;
+  display: block;
+}
+
+#search .tip {
+  float: right;
+}
+
+#searchnav ul {
+  /* Use explicit height to help IE 6/7 guide the rendering of the tabs */
+  height: 1.35em;
+}
+
+#searchform, #searchtips {
+  float: left;
+}
+
+#searchform {
+  width: 28em;
+}
+
+#searchtips {
+  width: 19em;
+  margin-top: 2em;
+  margin-left: 3em;
+  font-size: 0.9em;
+}
+
+#searchtips h2 {
+  font-size: 1.25em;
+}
+
+#searchbody #searchtips ul li {
+  display: block;
+  /* margin: .75em 0 0 1em; */
+  margin: 0.75em 0 0 0;
+}
+
+#searchbody #searchtips ul {
+  margin-top: 1.25em;
+  list-style: disc;
+}
+
+#searchhistory {
+  width: 100%;
+}
+
+#searchtips .more {
+  text-align: right;
+  margin-top: 1.5em;
+}
+
+.pagination {
+  display: inline;
+  margin-left: 2em;
+  margin-right: 1em;
+}
+
+.pagination .shorttab {
+  margin-right: 0.4em;
+}
+
+.checkboxvalue {
+  font-size: 0.9em;
+}
+
+/* reslist */
+.shorttab {
+  margin-right: 0.5em;
+}
+
+.mediumtab {
+  margin-right: 1em;
+}
+
+#x-coll-select-deselect-all {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 0.9em;
+  display: block;
+  margin-top: 0.75em;
+  margin-left: 2.25em;
+}
+
+#resultsnav {
+  margin-bottom: 2em;
+}
+
+#searchresults + #resultsnav {
+  margin-top: 1.75em;
+}
+
+#resultsnav select, #resultsnav input, .resultsnav select, .resultsnav input {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#resultsnav .sort, .resultsnav .sort {
+  display: block;
+  float: right;
+}
+
+#searchresultsbar {
+  margin-bottom: 1.5em;
+}
+
+#resultsnav, .resultsnav, #searchresultsbar {
+  font-size: 0.9em;
+}
+
+#facets-form {
+  margin-top: 2em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    misc.css
+    
+    Any styles not in other stylesheet category. E.g.,
+    styling for elements, typography, etc.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Don't want to reset this; DPP still using border attribute. */
+table {
+  border: inherit;
+}
+
+body {
+  font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+  line-height: 1.2em;
+  /* Minimum line height */
+  color: #231f20;
+  background: #fff;
+  font-size: 16px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+ul.bulleted {
+  list-style: disc;
+  margin-left: 2em;
+}
+
+ul.bulleted > li {
+  margin-top: 0.5em;
+}
+
+ol.numbered {
+  list-style: decimal;
+  margin-left: 2em;
+}
+
+ol.numbered > li {
+  margin-top: 0.5em;
+}
+
+/* When nesting lists, add space */
+ul ul, ul ol, ol ul, ol ol {
+  margin-left: 1.25em;
+  margin-top: 0.15em;
+  margin-bottom: 1em;
+  font-size: 0.9em;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+table caption {
+  font-size: 1.1em;
+  margin: 0 0 6px 0;
+}
+
+table th, table td {
+  background: inherit;
+  padding: 6px;
+}
+
+table th, .rend-label td {
+  font-weight: bold;
+  background: #d9d9d9;
+}
+
+table th {
+  margin-bottom: 10px;
+}
+
+q:before, q:after {
+  content: "";
+}
+
+q {
+  quotes: "" "";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5em 0 10px 0;
+  line-height: 1.2em;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+div > h2:first-child {
+  margin-top: 0;
+}
+
+h1 + h2, h2 + h3 {
+  margin-top: 0;
+}
+
+/** ========================== 1 ========================== */
+/*
+h1, #header .title {
+	font-size: 1.5em;
+  margin-top: 15px;
+}
+
+h2 {
+  margin-top: 1em;
+	font-size: 1.4em;
+  font-weight: normal;
+}
+
+h3 {
+  font-style: italic;
+	font-size: 1.2em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
+h5 {
+	font-size: 1em;
+  font-weight: bold;
+}
+
+h6 {
+	font-size: 0.9em;
+	font-style: italic;
+}
+*/
+/** ========================== 2 ========================== */
+h1, #header .title {
+  font-size: 2em;
+  margin-top: 15px;
+}
+
+#header .subtitle {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+h2 {
+  margin-top: 1em;
+  font-size: 1.6em;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+/** ========================== 3 ========================== */
+/**
+h1, #header .title {
+	font-size: 2.5em;
+  margin-top: 15px;
+}
+
+h2 {
+  margin-top: 1em;
+	font-size: 1.875em;
+  font-weight: normal;
+}
+
+h3 {
+  font-style: italic;
+	font-size: 1.4em;
+}
+
+h4 {
+	font-size: 1.05em;
+  font-weight: bold;
+}
+
+h5 {
+	font-size: 1.05em;
+  font-style: italic;
+}
+
+h6 {
+	font-size: 0.8em;
+  font-weight: bold;
+	font-style: italic;
+}
+*/
+p, ul, ol {
+  margin: 0 0 10px 0;
+}
+
+p, ul, ol, .q1-block, .q1-poem {
+  line-height: 1.4em;
+}
+
+ul > ul, ol > ol {
+  /* indents nested lists indefinitely */
+  margin: 6px 0 6px 10px;
+}
+
+blockquote, q, .blockquote-by {
+  display: block;
+  margin: 1.5em 1.25em;
+  padding: 0 0 0 10px;
+}
+
+blockquote:before, blockquote:after {
+  content: '"';
+}
+
+blockquote + .blockquote-by {
+  margin-top: -0.75em;
+}
+
+li, li p {
+  line-height: 1.4em;
+}
+
+/* 2012/02/02: So that margins between paragraphs isn't greater than enclosing li. Individual collections can override (e.g., icp) until we decide how lists and paragraphs should display for all of mpubs */
+li p {
+  margin: 0;
+}
+
+/*
+li p:last-child {
+  margin-bottom: 0;
+}
+*/
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+/*
+a[href]:hover, a[href]:focus, .link:hover, .link:focus {
+	color: $active-links;
+}
+*/
+/* Represents all nav buttons */
+/* Subclass of nav buttons in #globalactions */
+/* Modify button for currently selected page */
+/* Modify button so tiny */
+/* These are the prev/next buttons */
+.sectionnav a, .sectionnav a:visited {
+  text-decoration: none;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  width: 6em;
+  padding: 6px;
+  background: #e9e9e9;
+}
+
+/* Generic button */
+a.button {
+  text-decoration: none;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  width: 6em;
+  padding: 6px;
+  background: #e9e9e9;
+  text-transform: none;
+  font-variant: normal;
+  width: auto;
+  padding: 0.75em;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+a.button:hover {
+  background: #d9d9d9;
+}
+
+.amazon strong {
+  border-bottom: 2px dotted #f2930e;
+}
+
+/* All buttons in #globalactions */
+#globalnav ul li, #orgnav ul li {
+  /* Don't change font color for current nav item - might be too faint to read */
+  /* some sites use strong (like jep), but if change to a.current, can remove this */
+}
+#globalnav ul li a:link, #globalnav ul li a:visited, #orgnav ul li a:link, #orgnav ul li a:visited {
+  color: #505050;
+  font-weight: normal;
+  text-decoration: none;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  width: 6em;
+  padding: 6px;
+}
+#globalnav ul li a:link.current, #globalnav ul li a:visited.current, #orgnav ul li a:link.current, #orgnav ul li a:visited.current {
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+}
+#globalnav ul li a.current:hover, #orgnav ul li a.current:hover {
+  color: inherit;
+}
+#globalnav ul li strong, #orgnav ul li strong {
+  color: #505050;
+  font-weight: normal;
+  text-decoration: none;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  width: 6em;
+  padding: 6px;
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+}
+
+/* Modify to be tiny */
+#orgnav ul li a:link, #orgnav ul li a:visited, #orgnav ul li a.current {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 2px 5px;
+  width: auto;
+}
+#orgnav ul li strong {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 2px 5px;
+  width: auto;
+}
+
+.make-button {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #aaa;
+  padding: 0 5px;
+  text-decoration: none;
+}
+
+/* Spare the RSS feed */
+#orgnav ul li a.feed:hover, #orgnav ul li a.feed:active, #orgnav ul li a.feed:link, #orgnav ul li a.feed:visited {
+  background: inherit;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+#linktotop {
+  margin-top: 2.5em;
+  font-size: 0.6em;
+  text-align: center;
+  /* @include small-caps; */
+  text-transform: uppercase;
+}
+
+#linktotop a img {
+  display: inline;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+pre {
+  font-family: monospace;
+}
+
+tt {
+  font-family: monospace;
+  font-size: 0.75em;
+}
+
+#searchresultsbar a {
+  text-decoration: none;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    structural.css
+    
+    Styling for structural elements (i.e., containers
+    and page layouts) that impact most/all pages.
+
+    Any structural styles for specific section should
+    go in respective stylesheet.
+
+    This is definitely a stylesheet to exclude when
+    styling pages with different layout.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#wrapper, .pageviewwrapper, #pvdoccontent {
+  /* container for all content */
+  /* Fits on 800 x 600, though prefer larger */
+  min-width: 50em;
+  /* Desired width */
+  max-width: 60em;
+  /* Use percentage so can use a max and min */
+  width: 90%;
+  margin: 10px auto;
+}
+
+#pvdoccontent {
+  white-space: pre-line;
+  border: 1px solid #d9d9d9;
+  padding: 0 1em;
+}
+
+.pageviewwrapper {
+  margin-bottom: 0;
+}
+
+#masthead, #globalactions, #fromsearch, #pageviewer, .pagenav, .sectionnav, #pageimage, #article, #avail, #footer, #search, #browse, #picklist, #toc, #staticcontent, #searchbody, #resultsbody {
+  /* containers for main sections */
+  clear: both;
+  margin-top: 10px;
+}
+
+#globalactions {
+  margin-bottom: 25px;
+}
+
+#masthead {
+  /* container for publication logo and quick search box */
+  margin: 0 0 10px 0;
+}
+
+#logo {
+  /* container for publication logo */
+  float: left;
+  /* Set really low width but make visible. This will probably always overflow, but now it cannot butt up against the quicksearch at min-width! */
+  width: 10px;
+  overflow: visible;
+}
+
+#orgnav {
+  float: right;
+  font-size: 0.75em;
+}
+
+#orgnav ul li {
+  float: left;
+  margin: 12px 0 0 5px;
+}
+
+#quicksearchwrapper {
+  clear: right;
+  float: right;
+}
+
+#logo, #orgnav {
+  margin: 0.25em 0 0.75em 0;
+}
+
+#globalnav {
+  margin-left: -6px;
+}
+
+#globalnav, #globalnav ul, #globalnav ul li, #globalnav ul li a {
+  /* positioning for global navigation */
+  height: 2em;
+  line-height: 2em;
+  margin-bottom: 10px;
+}
+
+#globalnav ul li {
+  /* positioning for global navigation menu items */
+  float: left;
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+#quicksearchwrapper {
+  font-size: 0.8em;
+}
+
+#quicksearchwrapper label {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+#quicksearchwrapper .group input {
+  width: 10em;
+}
+
+#quicksearchwrapper input[type="submit"] {
+  margin-left: 0.5em;
+  width: auto;
+}
+
+#quicksearchoptions, #quicksearchtext {
+  margin-top: 0.5em;
+  color: #999;
+}
+
+/* Quick search option #3: */
+#quicksearch-no-options {
+  font-style: italic;
+  padding: 0 0.5em 0 0.25em;
+}
+
+/*
+#quicksearchoptions input {
+  margin-left: 1em;
+}
+*/
+#globalnav, #orgnav {
+  white-space: nowrap;
+}
+
+#globalnav {
+  /* Explicit (generous) width for three buttons so displays slightly
+     better on very small screen */
+  width: 24em;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - -
+    unsorted.css
+
+    These styles have not been sorted and are subject
+    to be moved or removed.
+
+    When adding new styles, please put them in 
+    misc.css if they do not belong in another file.
+
+    Only put styles in here if you are uncertain 
+    where they belong or you are uncertain whether
+    they are being used.
+
+    The goal is for this file to be empty.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#matchingtermsbox, #prev-next-details {
+  display: block;
+  float: right;
+}
+
+/* Where's this? */
+.skiptofirst {
+  margin-left: 3em;
+}
+
+/* Where's this? */
+#toc table {
+  margin: 0 1em;
+}
+
+/* Where's this? */
+.date {
+  display: block;
+  margin-bottom: .75em;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+#submit-pageview {
+  margin-left: 3em;
+}
+
+.pageviewwrapper label:after {
+  content: ': ';
+}
+
+/* Are these used anywhere? */
+#pageviewer {
+  /* container for functionality related to pageviewer (size selector, searching in the text, etc.) */
+  margin: 10px 0;
+  height: 1.8em;
+  background: #fff;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  padding: 6px;
+}
+
+#pageviewer form {
+  /* general style for pageviewer widget forms */
+  height: 1em;
+  padding: 4px;
+}
+
+#pageviewer form#viewcontrols {
+  /* general style for controls related to viewing pageimages */
+  float: left;
+}
+
+#pageviewer form#searchitem {
+  /* general style for in-item search form */
+  float: right;
+}
+
+#pageviewer select {
+  /* style for pagviewer control select boxes */
+  margin-right: 10px;
+}
+
+#format-buttons {
+  float: left;
+}
+
+#zoom {
+  float: right;
+}
+
+#format-buttons {
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+#format-buttons a {
+  font-size: 1.1em;
+  display: block;
+  float: left;
+  text-decoration: none;
+  min-width: 3em;
+  margin-right: 5px;
+  text-align: center;
+  padding: 0.2em;
+  padding-top: 0.1em;
+  padding-bottom: 0.3em;
+}
+
+#pagination {
+  margin-top: 0.1em;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  width: 35em;
+  text-align: center;
+  font-size: 1.1em;
+  height: 1em;
+}
+#pagination select {
+  display: inline;
+}
+#pagination li a {
+  padding: 0.3em 0.4em 0.1em 0.4em;
+}
+#pagination .current {
+  font-weight: bold;
+  background: #d9d9d9;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-bottom: 1px solid #888;
+  border-right: 1px solid #aaa;
+  text-decoration: none;
+}
+#pagination ul {
+  margin-bottom: 0;
+  margin-top: 0.15em;
+  margin-left: 0.25em;
+}
+#pagination ul, #pagination li {
+  display: inline-block;
+}
+
+#zoom {
+  margin-top: 0.1em;
+}
+#zoom .zoom, #zoom .current-zoom {
+  display: block;
+  float: left;
+  vertical-align: middle;
+}
+#zoom .zoom {
+  font-family: courier, monospace;
+  font-size: 1.5em;
+  margin: 0 0.25em;
+  line-height: 0;
+  text-decoration: none;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+#zoom .current-zoom {
+  font-size: 1.25em;
+}
+
+#pageimage img {
+  /* style for pageimages */
+  display: block;
+  margin: 10px auto;
+  border: 1px solid #7f8a80;
+}
+
+iframe#pdfview {
+  /* PDF display for browsers that support PDFs */
+  width: 100%;
+  height: 100%;
+}
+
+/* Is this used anywhere? */
+#avail {
+  /* container for availability statement and similar longer notes */
+  font-size: 0.9em;
+  padding: 20px 0;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    browse.css
+
+    Styles specific to browse section.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#browsenav ul {
+  /* Use explicit height to help IE 6/7 guide the rendering of the tabs */
+  height: 2em;
+}
+
+#letternavfirst, #letternavsecond {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+#letternavfirst a, #letternavfirst strong, #letternavfirst span {
+  margin-left: 0.75em;
+}
+
+#letternavfirst span {
+  color: #bbb;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    encodedtext.css
+
+    Styles specific to encoded text page.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+table[BORDER='1'] td, table[BORDER='1'] th {
+  border: 1px solid #222;
+}
+
+#fromsearch {
+  /* container for link back to search results for content reached via search */
+  margin: 10px 0;
+  background: #fff;
+  height: 1.2em;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  padding: 6px;
+}
+
+#fromsearch p {
+  /* font-styling for link back to search results */
+  font-size: 0.9em;
+}
+
+/* Want notes to stand out when no JavaScript support and appear inline */
+.note_content .no_javascript {
+  font-size: 0.8em;
+  color: #333;
+}
+
+/* When JavaScript is off, this content must appear inline, since it will be rendered inline, usually within a paragraph */
+.note_content .no_javascript * {
+  display: inline;
+}
+
+/* To maintain a valid DOM, converted paragraphs to other element. Render as paragraph. */
+.note_content .javascript .p {
+  display: block;
+}
+
+#licenseinfo img {
+  vertical-align: text-bottom;
+}
+
+#licensehover {
+  display: hidden;
+  position: absolute;
+}
+
+#licensehover span {
+  font-size: 0.8em;
+  border: 1px solid #000;
+  padding: 0.5em 0.75em;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+#article ul {
+  list-style: disc;
+  margin: 1em 0 1.5em 2em;
+}
+
+#article {
+  /* This is for non-numbered notes, appearing above numbered notes. */
+}
+#article ul.special-notes, #article ul.special-notes li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#article ul.special-notes li .notenumber {
+  display: block;
+  float: left;
+  margin-right: 0.75em;
+}
+
+#article ul.toc {
+  /* formatting for TOC page lists */
+  margin: 0 0 10px 0;
+}
+
+#article ol {
+  list-style: decimal;
+  margin: 0 0 10px 20px;
+  padding-left: 1em;
+}
+
+#article ul.toc li {
+  /* formatting for TOC page lists items */
+  list-style: none;
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+}
+
+#article ul.toc li > ul {
+  /* formatting for all TOC page nested lists; font gets slowly, progressively smaller */
+  list-style: inherit;
+  margin: 6px 0 10px 10px;
+  font-size: 95%;
+}
+
+.two-col {
+  width: 87%;
+}
+
+.figure {
+  text-align: center;
+  margin: 3em 2em;
+  line-height: 1.4em;
+  /* Encoded many ways, try to style captions for figures similarly */
+  /* .head, .figurep, .figurecaption { */
+}
+.figure img {
+  margin: 0 auto;
+  display: block;
+  /* allows for large figure-type images to be centered; images not in the .figure container will display inline */
+  text-align: center;
+  border: 0;
+  max-width: 100%;
+}
+.figure div, .figure .figurep, .figure p {
+  display: block;
+  margin: 0;
+  margin-top: 1.25em;
+  font-size: 0.9em;
+}
+.figure div + div, .figure p + p, .figure div + p, .figure p + div, .figure div + .figurep {
+  margin-top: 0.75em;
+}
+.figure .head {
+  font-style: normal;
+  /*font-size: 1.1em;*/
+}
+.figure .head .rend-i {
+  font-style: italic;
+}
+.figure + .figure {
+  margin-top: 5em;
+}
+
+/* Style the footnotes, and pointers to footnotes, that have just been linked to */
+span.ptr:target, p.numberednote:target, .note-footer-link:target {
+  background: #C1DCF7;
+}
+
+img.backToPtr {
+  display: inline;
+}
+
+#item-breadcrumbs {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  margin-top: 50px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    multisection.css
+
+    Styles that are specific to more than one
+    section but are not general.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#searchbody, #browsebody, #picklistbody {
+  border-radius: 0 8px 8px 8px;
+  -moz-border-radius: 0 8px 8px 8px;
+  -webkit-border-radius: 0 8px 8px 8px;
+  clear: both;
+  min-width: 800px;
+}
+
+#searchnav ul li a, #searchnav ul li strong, #xcollsearchtabs li a, #xcollsearchtabs li strong, #browsenav ul li a, #browsenav ul li strong {
+  border-radius: 8px 8px 0 0;
+  -moz-border-radius: 8px 8px 0 0;
+  -webkit-border-radius: 8px 8px 0 0;
+}
+
+#browsenav ul {
+  /* Don't let other styles introduce space */
+  margin: 0 !important;
+}
+
+#browsenav li, #searchnav li, #xcollsearchtabs li a {
+  display: inline;
+}
+
+#searchnav, #searchnav ul, #searchnav li, #browsenav, #browsenav ul, #browsenav li, #xcollsearchtabs, #xcollsearchtabs li {
+  margin: 0;
+  padding: 0;
+}
+
+#xcollsearchtabs {
+  margin-top: 1.5em;
+}
+
+#searchnav li a, #searchnav li strong, #browsenav li a, #browsenav li strong, #xcollsearchtabs li a, #xcollsearchtabs li strong {
+  display: block;
+  float: left;
+  background: #fff;
+  min-width: 4em;
+  padding: 6px 10px;
+  text-decoration: none;
+  text-transform: capitalize;
+  margin-right: 3px;
+  margin-bottom: 0;
+}
+
+#searchnav li a, #searchnav li strong, #browsenav li a, #browsenav li strong, #xcollsearchtabs li a, #xcollsearchtabs li strong {
+  border: 1px solid #eaeaea;
+  background: #fff;
+}
+
+#searchnav li strong, #browsenav li strong, #xcollsearchtabs li strong {
+  color: #505050;
+  background: #f5f5f5;
+  font-weight: normal;
+}
+
+#searchnav li a, #searchnav li strong, #browsenav li a, #browsenav li strong, #xcollsearchtabs li a, #xcollsearchtabs li strong {
+  border-bottom: 0;
+}
+
+#searchbody, #browsebody, #picklistbody {
+  border-top: 1px solid #e5e5e5;
+}
+
+#searchnav li a, #browsenav li a, #xcollsearchtabs li a {
+  text-decoration: none;
+}
+
+/*
+#globalnav ul li a:active, #searchnav li a:active, #browsenav li a:active, #xcollsearchtabs li a:active, .sectionnav a:active { 
+	background: $active-links;
+}
+*/
+#searchresults, #browselist, #toclist, #picklistitems {
+  min-width: 100%;
+  font-size: 0.9em;
+  line-height: 1.3em;
+}
+
+#searchresults .accessrestricted, #searchresults .accessdenied {
+  background: transparent url("/m/mpubs/graphics/lock.gif") no-repeat top left;
+  padding-left: 21px;
+  display: block;
+}
+
+#searchresults, #browselist, #breadcrumbs, #pagenav {
+  padding: 10px;
+  margin-top: 15px;
+  clear: both;
+}
+
+#searchresultsbar {
+  margin-top: 15px;
+}
+
+#returntoresults {
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+/* If there is a matching terms (highlight) box */
+#matchingtermsbox, #matchingtermsbox + #returntoresults {
+  padding: 10px 0;
+}
+
+#matchingtermsbox {
+  margin-right: 10px;
+}
+
+#matchingtermsbox + #returntoresults {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  width: 100%;
+  background: #f5f5f5;
+}
+
+#matchingtermsbox + #returntoresults a {
+  margin-left: 10px;
+}
+
+/* /if */
+/* If not matching terms (highlight) box */
+#returntoresults {
+  padding: 10px 10px 0 10px;
+}
+
+/* /if */
+#pagenav, #printpage {
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+  min-height: 2em;
+}
+
+#extras {
+  width: 13em;
+  border: 1px solid #e5e5e5;
+  background: transparent;
+}
+
+#extras.no-alt {
+  width: 5em;
+}
+
+#extras.popout span {
+  font-size: 12px;
+}
+
+#extras ul {
+  list-style: none;
+  font-size: 12px;
+  margin: 0px 24px 0px 0px;
+  font-family: inherit;
+  float: left;
+}
+
+#extras li .size:before, .download .size:before {
+  content: " (";
+}
+#extras li .size:after, .download .size:after {
+  content: ")";
+}
+
+#extras li .size {
+  font-size: inherit;
+}
+
+#extras .ui-widget {
+  font-family: inherit;
+}
+#extras .share, #extras .print, #extras .download {
+  width: 80px;
+  font-family: inherit;
+}
+#extras .share {
+  position: relative;
+}
+#extras .btn {
+  margin-bottom: 5px;
+  display: block;
+  color: inherit;
+}
+#extras a.btn {
+  color: inherit;
+}
+#extras .share-btn-hover {
+  background: #40658f;
+  color: #fff;
+}
+#extras .social {
+  background: #f6f6f6;
+  color: inherit;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  text-align: center;
+  display: none;
+  width: 76.5px;
+  margin-top: 2.1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+#extras ul.social li {
+  margin-top: 8px;
+}
+#extras ul.social li:first-child {
+  margin-top: 0px;
+}
+#extras .social a {
+  color: inherit;
+}
+#extras .reveal {
+  display: block;
+}
+#extras .btn-reveal {
+  border-bottom: 2px solid #ccc;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.download .size {
+  font-size: .65em;
+}
+
+.more-info {
+  margin-left: .15em;
+}
+
+.more-info-dialog {
+  display: none;
+}
+
+.more-info img {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.pageviewwrapper #extras {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#extras, #search-extras {
+  margin-left: 1em;
+  float: right;
+  /* To hide borders, etc. from neighboring elements*/
+  background: #fff;
+}
+
+li#twitter {
+  margin-top: 2px;
+}
+
+li#facebook {
+  /* evens out spacing between the Twitter and Facebook buttons */
+  display: inline;
+}
+
+ul#sharinglinks li#facebook {
+  /* for alt version */
+  margin-top: -4px;
+}
+
+li#print a {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  padding: 0 0 0 20px;
+  background: transparent url("/m/mpubs/graphics/print.gif") no-repeat center left;
+}
+
+li#viewpdf a {
+  /* PDF view link style */
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  padding: 0 0 0 20px;
+  background: transparent url("/m/mpubs/graphics/pdf.gif") no-repeat center left;
+}
+
+li#download-pdf a, .download-pdf {
+  /* @include extras-item( '/m/mpubs/graphics/pdf.gif' );*/
+  white-space: nowrap;
+}
+
+li#download-epub a, .download-epub {
+  white-space: nowrap;
+}
+
+li#download-epub a {
+  /* @include extras-item( '/m/mpubs/graphics/page.gif' );*/
+}
+
+.download-epub {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  padding: 0 0 0 20px;
+}
+
+.download-pdf {
+  font-size: inherit;
+}
+
+.pdf-size {
+  font-size: 0.9em;
+}
+
+.pdf {
+  white-space: nowrap;
+  /*text-align: right;*/
+  display: inline;
+}
+
+li#feed a {
+  /* RSS feed link style */
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  padding: 0 0 0 20px;
+  background: transparent url("/m/mpubs/graphics/feed.gif") no-repeat center left;
+}
+
+li#delicious a {
+  /* delicious link style */
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  padding: 0 0 0 20px;
+  background: transparent url("/m/mpubs/graphics/delicious.gif") no-repeat center left;
+}
+
+#article, #results, #toc {
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+#searchhistory, #picklistitems, #searchresults {
+  margin-top: 15px;
+}
+
+#article h1, #results {
+  margin-bottom: 10px;
+}
+
+.specialIssueTitle {
+  font-size: 1.15em;
+  margin-top: 1em;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    pageviewer.css
+
+    Styles specific to pageviewer page.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#pagenav, #printpage {
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+.pagenav, .pagenav ul, .pagenav ul li {
+  /* general style for prev/next navigation for pageimages and sectioned encoded text */
+  height: 1.6em;
+  font-size: 95%;
+}
+
+.pagenav ul li {
+  /* general style for prev/next navigation items */
+  margin: 10px 0;
+}
+
+.pagenav ul li.prev {
+  /* style for prev navigation */
+  float: left;
+}
+
+.pagenav ul li.next {
+  /* style for next navigation */
+  float: right;
+}
+
+.pagenav ul li a {
+  text-decoration: none;
+  background: #fff;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 6px;
+}
+
+.pagenav ul li a:active {
+  /* on-click style for prev/next nav */
+  background: #9bb329;
+}
+
+#pagenav {
+  font-size: 0.8em;
+  /* margin-bottom: 20px; */
+}
+
+#pageactions .selectmenu {
+  /*margin-right: 1em;*/
+}
+
+#pagesearch {
+  float: right;
+}
+
+#printpage {
+  width: auto;
+  float: right;
+  padding: 8px;
+}
+
+#printpage a {
+  text-decoration: none;
+}
+
+.pagenav, .sectionnav {
+  text-align: center;
+}
+
+.pagenav span {
+  margin: 0 10px;
+  padding: 8px 2px 2px 2px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+.pagenav span:hover {
+  border: 1px solid #d9d9d9;
+}
+
+.sectionnav {
+  /* Margin makes more sense, but MSIE8 won't comply */
+  padding: 3em 0 2.5em 0;
+  margin-top: 0;
+}
+
+.sectionnav.bottom {
+  /* Margin makes more sense, but MSIE8 won't comply */
+  padding: 3em 0 3em 0;
+  margin-top: 0;
+}
+
+.sectionnav a, .sectionnav a:visited, .button {
+  text-decoration: none;
+  line-height: 1em;
+  padding: 0.5em 1em 0.65em 1em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  margin: 0 1.25em;
+}
+
+.view {
+  width: 100%;
+  text-align: center;
+  clear: both;
+}
+
+#page {
+  width: auto;
+  margin-top: 1em;
+  margin-bottom: 0;
+  border: 1px solid #d9d9d9;
+}
+
+#toggle-highlighting-button {
+  display: block;
+  padding: 0.25em 0.4em;
+  background: #e9e9e9;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  margin-top: -0.35em;
+}
+
+#toggle-highlighting-button:hover {
+  background: #ff6;
+}
+
+#submit-toggle-highlighting {
+  float: right;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    ItemHeader
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#header {
+  margin-bottom: 1.5em;
+}
+
+#header div {
+  margin-top: 0.8em;
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+
+.byline, #header .authors {
+  font-size: 1.25em;
+  margin: .5em 0 .75em 0;
+}
+.byline div, #header .authors div {
+  font-size: 1em;
+  margin: 0;
+}
+.byline .author-notes, #header .authors .author-notes {
+  font-style: none;
+  font-size: 0.85em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+.byline .author + .author, .byline .author-notes + .author, #header .authors .author + .author, #header .authors .author-notes + .author {
+  margin-top: 0.75em;
+}
+
+.byline {
+  margin-bottom: 1.25em;
+}
+
+#toccontents .byline {
+  display: inline;
+  font-size: 1em;
+}
+#toccontents .byline:before {
+  content: ' - ';
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    Styles specific to home section.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+.home .aside {
+  float: right;
+  width: 20em;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    picklist.css
+
+    Styles specific to picklist section.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+.volume-title, .issue-title {
+  font-style: italic;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    ui-lightness jquery customizations
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+.ui-widget {
+  font-size: 0.85em;
+  font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+}
+
+hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 1.5em 0;
+}
+
+.line-number {
+  display: block;
+  width: 3em;
+  color: #999;
+  margin-left: -3em;
+  float: left;
+  text-align: left;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+
+.xmltd-rend-center {
+  text-align: center;
+}
+
+.xmltd-rend-right {
+  text-align: right;
+}
+
+.example {
+  font-family: Courier, "Courier New", monospace;
+  font-size: 0.9em;
+  background: #e9e9e9;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+
+.HEAD {
+  margin-top: 2em;
+}
+
+.caption {
+  margin-top: -1em;
+  margin-bottom: 2em;
+}
+
+.lowercasealpha, .lowercasealpha > li {
+  list-style-type: lower-alpha;
+}
+
+.lowercaseroman, .lowercaseroman > li {
+  list-style-type: lower-roman;
+}
+
+.uppercasealpha, .uppercasealpha > li {
+  list-style-type: upper-alpha;
+}
+
+.uppercaseroman, .uppercaseroman > li {
+  list-style-type: upper-roman;
+}
+
+/* Related to two heads in row, currently only in OHP */
+h2 + h2, h2 + a + h2 {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+h2 + h2 + .byline, h2 + a + h2 + .byline {
+  margin-top: 1.2em;
+}
+
+#byvolume span.date, .byissue span.date, #picklistbody #breadcrumbs span.date {
+  display: inline;
+  font-size: 1em;
+  color: #555;
+  font-style: normal;
+}
+
+.error {
+  font-size: 1.25em;
+  color: red;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Fix line-height problems for superscript, subscript.
+   Source: https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/ */
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub {
+  top: 0.4em;
+}
+
+iframe.youtube {
+  display: block;
+  width: 28em;
+  /* 420px / 15px = 28em */
+  height: 23em;
+  /* 345px / 15px = 23em */
+  margin: 1em auto 2em auto;
+}
+
+.googlemap iframe {
+  margin: 15px auto !important;
+  display: block;
+}
+
+/* RESPONSIVE SELECTORS */
+@media screen and (min-width: 47.5em) {
+  /* display two columns of images side by side */
+  .two-col {
+    width: 38%;
+    float: left;
+  }
+}
+
+/*# sourceMappingURL=mpubs.css.map */

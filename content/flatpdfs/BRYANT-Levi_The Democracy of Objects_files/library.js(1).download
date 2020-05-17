@@ -1,0 +1,60 @@
+$(document).ready( function() {
+
+  prepareSpacingAbovePublisher();
+
+  //prepareCoverImageSpacing();
+
+});
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareSpacingAbovePublisher() {
+  var title = $( '#header .title' );
+
+  if ( title.length > 0 ) {
+    var titleHeight = title.height();
+    var titleLineHeight = removePixelUnit( title.css( 'line-height' ) );
+
+    var diff = titleHeight - titleLineHeight;
+
+    //alert( titleHeight + ' - ' + titleLineHeight + ' = ' + diff );
+
+    if ( diff > 0 ) {
+      var publisher = $( '#header .publisher' );
+      var marginTop = removePixelUnit( publisher.css( 'margin-top' ) );
+
+      publisher.css( 'margin-top', marginTop - diff ); 
+    }
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function removePixelUnit( str ) {
+  if( endsWith( str, 'px' ) ) {
+    return str.substr( 0, str.length - 2);
+  }
+  return str;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+/* Source: http://stackoverflow.com/questions/280634/endswith-in-javascript */
+function endsWith(str, suffix) {
+  return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - */
+function prepareCoverImageSpacing() {
+
+  var head = $( '.content-top' );
+
+  if ( head.length > 0 ) {
+    var imgWrapper = $( '#cover-image-wrapper' );
+
+    var diff = head.height() - imgWrapper.height();
+
+    var vertMargins = diff / 2;
+
+    imgWrapper.css( 'margin-top', vertMargins );
+    imgWrapper.css( 'margin-bottom', vertMargins );
+  }
+}
+

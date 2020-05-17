@@ -1,0 +1,98 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - 
+    static.css
+    
+    Styles exclusively for static pages.
+   - - - - - - - - - - - - - - - - - - - - - - - - - */
+#staticcontent .more {
+  font-size: 0.9em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+#staticcontent div.more {
+  text-align: right;
+  margin-top: 2em;
+}
+
+a.more, .more a {
+  text-decoration: none;
+}
+
+/* Styles for home page branding */
+#staticcontent .popout span {
+  font-size: 1.15em;
+}
+
+#staticcontent .popout .more {
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+#staticcontent .popout {
+  width: 97%;
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  margin-left: -6px;
+}
+
+#staticcontent .section {
+  margin-top: 1.75em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #eee;
+}
+
+#staticcontent h2 + .section {
+  margin-top: 0;
+}
+
+#staticcontent .section:last-child {
+  border-bottom: 0;
+  margin-bottom: 1em;
+}
+
+#staticcontent .section p:first-letter {
+  font-size: 1.1em;
+}
+
+#staticcontent .contentright h2 {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#staticcontent .aside {
+  float: left;
+}
+
+#staticcontent .contentleft, #staticcontent .contentright {
+  /* Prevents lines in background from showing when floating divs */
+  background: #fff;
+}
+
+#staticcontent .contentleft {
+  width: 34em;
+}
+
+#staticcontent .contentright {
+  width: 20.5em;
+  float: right;
+  clear: both;
+  margin: 4px 1em 20px 1em;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+}
+
+#staticcontent .borderless {
+  border-bottom: 0 !important;
+}
+
+#staticcontent .contentright, #staticcontent .contentleft {
+  font-size: 0.9em;
+}
+
+#staticcontent #linktotop {
+  clear: both;
+}
+
+#staticcontent h1, #staticcontent h2 {
+  margin-bottom: 12px;
+}
