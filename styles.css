@@ -1,16 +1,11 @@
 @font-face {
     font-family: bookman;
-    src: url("Jukebox Collection - BookmanJFPro Italic.otf");
+    src: url("Jukebox Collection - BookmanJFPro Italic.woff2") format("woff2");
 }
 
 @font-face {
     font-family: solanel;
-    src: url("Nootype - Solanel-Medium.otf");
-}
-
-@font-face {
-    font-family: adobe;
-    src: url("AdobeFnt14.lst");
+    src: url("Nootype - Solanel-Medium.woff2") format("woff2");
 }
 
 body {
